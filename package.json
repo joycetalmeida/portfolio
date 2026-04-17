@@ -1,7 +1,7 @@
 {
   "name": "gitactions_proj",
   "version": "1.0.0",
-  "description": "Este repositorio e um starter para automacoes com GitHub Actions.",
+  "description": "This repository is a starter for GitHub Actions automations.",
   "main": "index.js",
   "scripts": {
     "test": "npm run cy:run:chrome",

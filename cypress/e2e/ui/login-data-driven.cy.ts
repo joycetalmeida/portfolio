@@ -8,11 +8,11 @@ type UserScenario = {
 
 const users: UserScenario[] = require("../../fixtures/users.json");
 
-describe("Login data-driven", () => {
+describe("Data-driven login", () => {
   const loginPage = new LoginPage();
 
   users.forEach((user) => {
-    it(`valida login para ${user.username}`, () => {
+    it(`validates login for ${user.username}`, () => {
       loginPage.visit();
       loginPage.login(user.username, user.password);
 

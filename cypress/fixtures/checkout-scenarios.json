@@ -1,13 +1,13 @@
 [
   {
-    "name": "checkout com um produto",
+    "name": "checkout with one product",
     "items": ["Sauce Labs Backpack"],
     "firstName": "Joao",
     "lastName": "Tester",
     "postalCode": "01000-000"
   },
   {
-    "name": "checkout com dois produtos",
+    "name": "checkout with two products",
     "items": ["Sauce Labs Bike Light", "Sauce Labs Fleece Jacket"],
     "firstName": "Maria",
     "lastName": "QA",

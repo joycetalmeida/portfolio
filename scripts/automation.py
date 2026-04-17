@@ -11,12 +11,12 @@ def str_to_bool(value: str) -> bool:
 def run_automation(dry_run: bool) -> dict:
     now_utc = datetime.now(timezone.utc).isoformat()
 
-    # Aqui voce implementa sua logica real de automacao.
+    # Implement your real automation logic here.
     result = {
         "status": "success",
         "dry_run": dry_run,
         "executed_at_utc": now_utc,
-        "message": "Automacao executada com sucesso.",
+        "message": "Automation executed successfully.",
     }
     return result
 
@@ -27,9 +27,9 @@ def write_report(data: dict, output_path: Path) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Executa automacao de exemplo.")
-    parser.add_argument("--dry-run", default="false", help="Executa sem alteracoes reais")
-    parser.add_argument("--output", default="artifacts/report.json", help="Caminho de saida do relatorio")
+    parser = argparse.ArgumentParser(description="Run sample automation.")
+    parser.add_argument("--dry-run", default="false", help="Run without real changes")
+    parser.add_argument("--output", default="artifacts/report.json", help="Output path for the report")
     args = parser.parse_args()
 
     dry_run = str_to_bool(args.dry_run)
@@ -38,7 +38,7 @@ def main() -> None:
     output_path = Path(args.output)
     write_report(result, output_path)
 
-    print(f"Relatorio gerado em: {output_path}")
+    print(f"Report generated at: {output_path}")
     print(json.dumps(result, indent=2))
 
 

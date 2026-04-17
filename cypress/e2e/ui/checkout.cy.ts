@@ -11,7 +11,7 @@ type CheckoutScenario = {
 
 const checkoutScenarios: CheckoutScenario[] = require("../../fixtures/checkout-scenarios.json");
 
-describe("E2E checkout resiliente", () => {
+describe("Resilient E2E checkout", () => {
   beforeEach(() => {
     cy.viewport(1366, 768);
     cy.loginAsStandardUser();
@@ -19,7 +19,7 @@ describe("E2E checkout resiliente", () => {
   });
 
   checkoutScenarios.forEach((scenario) => {
-    it(`executa ${scenario.name}`, () => {
+    it(`runs ${scenario.name}`, () => {
       const inventoryPage = new InventoryPage();
       const checkoutPage = new CheckoutPage();
 

@@ -1,79 +1,79 @@
-# Portfolio QA Automation com CI/CD
+# QA Automation Portfolio with CI/CD
 
-Este projeto demonstra automacao moderna de testes com foco em empregabilidade:
+This project demonstrates modern test automation practices with a strong portfolio focus:
 
-- CI/CD no GitHub Actions com execucao a cada push e pull request
-- Testes E2E em multiplos navegadores (headless)
-- Testes de API com validacao de contrato JSON (schema)
-- Padrões de projeto para manutencao (Page Objects e Custom Commands)
-- Data Driven Testing com massa vinda de arquivo JSON
-- Relatorios Allure publicados automaticamente no GitHub Pages
-- Verificacao de acessibilidade com cypress-axe
+- GitHub Actions CI/CD on every push and pull request
+- E2E tests running in multiple browsers (headless)
+- API testing with JSON contract (schema) validation
+- Maintainable project patterns (Page Objects and Custom Commands)
+- Data-driven testing using JSON fixtures
+- Allure reports published automatically to GitHub Pages
+- Automated accessibility auditing with cypress-axe
 
 ## Stack
 
 - Cypress
 - TypeScript
-- AJV (validacao de schema JSON)
+- AJV (JSON schema validation)
 - Allure Report
 - GitHub Actions
 
-## Estrutura principal
+## Main Structure
 
-- `.github/workflows/qa-cicd.yml`: pipeline de CI/CD de testes
-- `cypress/e2e/ui/checkout.cy.ts`: fluxo critico de checkout (resiliente + data-driven)
-- `cypress/e2e/ui/accessibility.cy.ts`: testes de acessibilidade
-- `cypress/e2e/api/contracts.cy.ts`: testes de API e contrato
+- `.github/workflows/qa-cicd.yml`: CI/CD test pipeline
+- `cypress/e2e/ui/checkout.cy.ts`: critical checkout flow (resilient + data-driven)
+- `cypress/e2e/ui/accessibility.cy.ts`: accessibility tests
+- `cypress/e2e/api/contracts.cy.ts`: API and contract tests
 - `cypress/e2e/page-objects/`: Page Objects
 - `cypress/support/commands.ts`: Custom Commands
-- `cypress/fixtures/`: dados de teste e contratos JSON
+- `cypress/fixtures/`: test data and JSON contracts
 
-## Rodando localmente
+## Run Locally
 
-1. Instale dependencias:
+1. Install dependencies:
 
 ```bash
 npm install
 ```
 
-2. Rode toda a suite headless (electron):
+2. Run the full headless suite (electron):
 
 ```bash
 npm run cy:run
 ```
 
-3. Rode apenas API + contrato:
+3. Run API + contracts only:
 
 ```bash
 npm run cy:api
 ```
 
-4. Gerar relatorio Allure local:
+4. Generate local Allure report:
 
 ```bash
 npm run allure:generate
 ```
 
-## CI/CD automatico
+## Automated CI/CD
 
-Pipeline em `.github/workflows/qa-cicd.yml`:
+Pipeline in `.github/workflows/qa-cicd.yml`:
 
-- Dispara em push/pull_request para `main`
-- Roda matriz de navegadores:
-	- `chrome`
-	- `firefox`
-- Publica artifacts de resultados
-- Consolida resultados e publica o Allure no GitHub Pages
+- Triggers on push/pull_request to `main`
+- Runs browser matrix:
+  - `chrome`
+  - `firefox`
+- Publishes result artifacts
+- Consolidates results and publishes Allure to GitHub Pages
 
-## Publicacao do Allure no GitHub Pages
+## Allure Publication on GitHub Pages
 
-Depois do primeiro push em `main`, o workflow publica o relatorio na branch `gh-pages`.
+After the first push to `main`, the workflow publishes the report to the `gh-pages` branch.
 
-No GitHub, configure:
+In GitHub, configure:
 
 - Settings > Pages > Source: `Deploy from a branch`
 - Branch: `gh-pages` / folder `/ (root)`
 
-## Observacao
+## Note
 
-Este repositorio tambem mantem um exemplo simples de automacao Python em `scripts/automation.py`, que pode coexistir com a suite QA.
+This repository also keeps a simple Python automation example in `scripts/automation.py`, which can coexist with the QA suite.

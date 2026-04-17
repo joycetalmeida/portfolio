@@ -1,1 +1,1 @@
-# Adicione dependencias Python aqui quando necessario.
+# Add Python dependencies here when needed.

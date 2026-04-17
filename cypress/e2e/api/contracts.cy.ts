@@ -3,7 +3,7 @@ const postSchema = require("../../fixtures/contracts/jsonplaceholder-post.schema
 describe("API contracts - JSONPlaceholder", () => {
   const apiBaseUrl = Cypress.env("apiBaseUrl");
 
-  it("valida contrato do GET /posts/1", () => {
+  it("validates GET /posts/1 contract", () => {
     cy.request(`${apiBaseUrl}/posts/1`).then((response) => {
       expect(response.status).to.eq(200);
       cy.validateJsonSchema(response.body, postSchema);
@@ -11,11 +11,11 @@ describe("API contracts - JSONPlaceholder", () => {
     });
   });
 
-  it("valida contrato do POST /posts", () => {
+  it("validates POST /posts contract", () => {
     cy.request("POST", `${apiBaseUrl}/posts`, {
       userId: 10,
-      title: "novo post",
-      body: "payload de contrato",
+      title: "new post",
+      body: "contract payload",
     }).then((response) => {
       expect(response.status).to.eq(201);
 

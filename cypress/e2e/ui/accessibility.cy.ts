@@ -1,5 +1,5 @@
-describe("Acessibilidade da tela de produtos", () => {
-  it("audita violacoes criticas com axe", () => {
+describe("Product page accessibility", () => {
+  it("audits critical and serious axe violations", () => {
     cy.loginAsStandardUser();
     cy.injectAxe();
     cy.checkA11y(
@@ -8,7 +8,7 @@ describe("Acessibilidade da tela de produtos", () => {
         includedImpacts: ["critical", "serious"],
       },
       (violations) => {
-        cy.log(`Violacoes encontradas: ${violations.length}`);
+        cy.log(`Violations found: ${violations.length}`);
       },
       true
     );

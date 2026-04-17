@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: "Executar em modo dry-run"
+        description: "Run in dry-run mode"
         required: false
         default: "true"
   push:
