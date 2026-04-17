@@ -1,0 +1,18 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Workflow artifacts gerados localmente
+artifacts/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Cypress outputs
+cypress/screenshots/
+cypress/videos/
+
+# Allure reports
+allure-results/
+allure-report/
